@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhigang Tian - Professional Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.5;
+            color: #000;
+            background: #fff;
+            padding: 0;
+            font-size: 11pt;
+        }
+        
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 2.5cm 2cm 2cm 2cm;
+            position: relative;
+        }
+        
+        .header-section {
+            display: table;
+            width: 100%;
+            margin-bottom: 25px;
+            border-bottom: 2pt solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .photo-cell {
+            display: table-cell;
+            width: 140px;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+        
+        .photo-container {
+            width: 120px;
+            height: 150px;
+            border: 1pt solid #000;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            text-align: center;
+            color: #666;
+        }
+        
+        .header-info {
+            display: table-cell;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+        
+        .name {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .company-header {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .contact-grid {
+            display: table;
+            width: 100%;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        .contact-row {
+            display: table-row;
+        }
+        
+        .contact-label {
+            display: table-cell;
+            width: 80px;
+            font-weight: bold;
+            padding-right: 10px;
+            vertical-align: top;
+        }
+        
+        .contact-value {
+            display: table-cell;
+            vertical-align: top;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2pt solid #000;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+        
+        .experience-entry {
+            margin-bottom: 20px;
+            border-left: 3pt solid #000;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .experience-entry::before {
+            content: '';
+            position: absolute;
+            left: -6pt;
+            top: 0;
+            width: 10pt;
+            height: 10pt;
+            background: #000;
+            border-radius: 50%;
+        }
+        
+        .job-period {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .job-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 3px;
+        }
+        
+        .company-name {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .job-details {
+            background: #f5f5f5;
+            padding: 10px 12px;
+            border: 1pt solid #ddd;
+            margin-bottom: 12px;
+            font-size: 9pt;
+            line-height: 1.4;
+        }
+        
+        .detail-row {
+            margin-bottom: 3px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 90px;
+        }
+        
+        .subsection {
+            margin-bottom: 12px;
+        }
+        
+        .subsection-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 8px;
+            text-decoration: underline;
+        }
+        
+        .responsibility-list, .achievement-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            counter-reset: list-counter;
+        }
+        
+        .responsibility-list li, .achievement-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            line-height: 1.4;
+            text-align: justify;
+            counter-increment: list-counter;
+        }
+        
+        .responsibility-list li::before, .achievement-list li::before {
+            content: counter(list-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            width: 20px;
+        }
+        
+        .two-column {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        .column {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 15px;
+        }
+        
+        .column:last-child {
+            padding-right: 0;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #000;
+            border-bottom: 1pt solid #000;
+            padding-bottom: 2px;
+        }
+        
+        .skill-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+        
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .education-entry {
+            margin-bottom: 12px;
+            padding: 10px;
+            border: 1pt solid #000;
+            background: #f9f9f9;
+        }
+        
+        .education-period {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .education-degree {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 3px 0;
+        }
+        
+        .education-school {
+            font-size: 10pt;
+            color: #333;
+        }
+        
+        .projects-grid {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        .project-column {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 10px;
+            width: 33.33%;
+        }
+        
+        .project-column:last-child {
+            padding-right: 0;
+        }
+        
+        .project-category {
+            margin-bottom: 15px;
+            border: 1pt solid #000;
+            padding: 8px;
+        }
+        
+        .project-category h4 {
+            font-size: 10pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #000;
+            text-align: center;
+            border-bottom: 1pt solid #000;
+            padding-bottom: 3px;
+        }
+        
+        .project-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            counter-reset: project-counter;
+        }
+        
+        .project-list li {
+            counter-increment: project-counter;
+            margin-bottom: 4px;
+            font-size: 8pt;
+            line-height: 1.2;
+        }
+        
+        .project-list li::before {
+            content: counter(project-counter) ". ";
+            font-weight: bold;
+        }
+        
+        .project-list a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px dotted #333;
+        }
+        
+        .project-list a:hover {
+            background: #f0f0f0;
+        }
+        
+        .languages-section {
+            margin-bottom: 20px;
+        }
+        
+        .proficiency-note {
+            font-size: 9pt;
+            font-style: italic;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .languages-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        
+        .languages-table th,
+        .languages-table td {
+            border: 1pt solid #000;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .languages-table th {
+            background: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .languages-table td {
+            text-align: center;
+        }
+        
+        .awards-section {
+            margin-bottom: 20px;
+        }
+        
+        .award-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1pt solid #000;
+            background: #f9f9f9;
+        }
+        
+        .award-title {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        
+        .award-details {
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #333;
+        }
+        
+        .copyright-list {
+            columns: 2;
+            column-gap: 15px;
+            font-size: 8pt;
+            line-height: 1.2;
+        }
+        
+        .copyright-list li {
+            margin-bottom: 3px;
+            break-inside: avoid;
+        }
+        
+        .footer-info {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2pt solid #000;
+            text-align: center;
+        }
+        
+        .info-table {
+            display: table;
+            margin: 0 auto;
+            font-size: 10pt;
+        }
+        
+        .info-row {
+            display: table-row;
+        }
+        
+        .info-cell {
+            display: table-cell;
+            padding: 3px 20px;
+            border-right: 1pt solid #ccc;
+            text-align: center;
+        }
+        
+        .info-cell:last-child {
+            border-right: none;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .salary-highlight {
+            background: #000;
+            color: #fff;
+            padding: 2px 6px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                min-height: auto;
+            }
+            
+            .experience-entry {
+                page-break-inside: avoid;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header-section">
+            <div class="photo-cell">
+                <div class="photo-container">
+                    <div>
+                        Professional<br>
+                        Photo<br>
+                        <small>(150 x 120px)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="header-info">
+                <div class="name">Zhigang Tian (Hanson Tins)</div>
+                <div class="title">Founder & Principal Engineer</div>
+                <div class="company-header">MedCloud.PH</div>
+                <div class="contact-grid">
+                    <div class="contact-row">
+                        <div class="contact-label">Phone:</div>
+                        <div class="contact-value">+63 09154101370</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">Email:</div>
+                        <div class="contact-value">tzg@facepayonline.com</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">Location:</div>
+                        <div class="contact-value">Makati, Metro Manila, Philippines</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">LinkedIn:</div>
+                        <div class="contact-value">https://www.linkedin.com/in/h5678762a6810a768/</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-entry">
+                <div class="job-period">2024 – Present</div>
+                <div class="job-title">Founder & Principal Engineer</div>
+                <div class="company-name">AgentForest.one | Remote</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Multi‑agent SaaS · MCP shared context</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> Fly.io / Neon Postgres / Cloudflare R2 / RunPod (vLLM)</div>
+                    <div class="detail-row"><span class="detail-label">Role:</span> Principal Engineer/DevOps</div>
+                </div>
+                <p style="margin-bottom: 10px; font-size: 10pt; font-weight: bold;">Summary:</p>
+                <p style="margin-bottom: 12px; font-size: 10pt; text-align: justify;">Built a multi-agent SaaS platform that orchestrates domain agents (e.g., Resume/Preference/Search/Browser/Match/CoverLetter/Apply/Account/Email/Notify) via a shared Model Context Protocol (MCP), with full-stack delivery (Fly.io + Neon Postgres + Cloudflare R2 + RunPod/vLLM).</p>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Responsibilities:</div>
+                    <ul class="responsibility-list">
+                        <li>Led end-to-end architecture & implementation (multi-tenant SaaS, auth, RBAC, billing, observability).</li>
+                        <li>Designed the MCP-based shared context and agent contracts; built visual orchestration flows.</li>
+                        <li>Implemented AI serving (OpenAI/LLaMA APIs, RAG pipelines), request batching、KV-cache 复用与灰度发布。</li>
+                        <li>Built CI/CD + infra as code (Docker, Fly.io), storage on R2, DB on Neon, audit trails and GDPR-style logs.</li>
+                        <li>Integrated payments (PayPal → Stripe roadmap)、i18n（en/zh/fa）与预约日历/消息通知闭环。</li>
+                        <li>Wrote product specs, SOPs & runbooks; coordinated UX, data governance, and risk controls.</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Delivered a working multi-agent MVP covering job-search and healthcare vertical demos (chat-driven).</li>
+                        <li>Shipped visual flow editor + runtime to monitor agent steps, retries, and tool-use traces.</li>
+                        <li>Reduced unit inference cost via prompt templating, response caching, and dynamic model routing.</li>
+                        <li>Established auditability: conversation transcripts, action logs, and PII redaction pipeline.</li>
+                        <li>Launched deployment playbooks (blue/green) and incident SOPs; improved recovery reliability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Jan 2023 - Present</div>
+                <div class="job-title">Founder & Lead Engineer</div>
+                <div class="company-name">MedGPT | National Capital Reg, Philippines</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Health Care</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> NLP, Node.js, PHP, Python, Flutter 3.7, LLM, OpenAI APIs, LLaMa, Med-PaLM</div>
+                    <div class="detail-row"><span class="detail-label">Role:</span> Lead Software Engineer/DevOps</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Responsibilities:</div>
+                    <ul class="responsibility-list">
+                        <li>Led the technical architecture of MedGPT.co, an AI-based medical toolset built using Node.JS and Express. Utilized SQLite as the database, integrating with Hugging Face, OpenAI APIs, and Med-PaLM models to provide comprehensive AI solutions for medical professionals and patients.</li>
+                        <li>Managed the development and deployment of sub-features such as the Android version of MedGPT and the AI talking doctor MedGPT.app, leveraging Flutter 3.7 and Python.</li>
+                        <li>Directed the development of the MedGPT.one platform, with a focus on FineTuning large models suitable for various medical applications.</li>
+                        <li>Implemented DevOps practices, including automation and monitoring, to manage the deployment and scaling of MedGPT's infrastructure, utilizing Azure and Google Cloud services.</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully built and deployed MedGPT.co, an AI-based medical toolset that utilized NLP, Node.JS, Express, SQLite, Hugging Face, OpenAI APIs, and Med-PaLM models.</li>
+                        <li>Managed to secure an organic growth of MedGPT.co user base to over 3,000 without promotional activities, with a daily user increase of approximately 100.</li>
+                        <li>Led the development and deployment of the Android version of MedGPT, expanding the accessibility of the toolset across different platforms.</li>
+                        <li>Initiated the development of the MedGPT.one platform aiming to provide an AI comprehensive medical platform with FineTuned large models.</li>
+                        <li>Actively working on the innovative talking AI doctor - MedGPT.app, aiming to revolutionize patient-doctor interactions.</li>
+                        <li>Filed for a patent ("GPT-based Automated Medical Care System"), underscoring the commitment to innovation and advancement within the field.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">May 2021 - Jul 2022 (1 year 2 months)</div>
+                <div class="job-title">Cloud Engineer</div>
+                <div class="company-name">Accenture | Philippines</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Specialization:</span> Multi‑cloud migration · Terraform · Docker/Kubernetes · CI/CD · Observability</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> Terraform, Docker, Kubernetes, GCP, Azure, AWS, CI/CD, API Gateway</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Responsibilities & Achievements:</div>
+                    <ul class="responsibility-list">
+                        <li>Standardized IaC (Terraform) and container delivery (Docker/K8s) across GCP/Azure/AWS environments.</li>
+                        <li>Implemented CI/CD with versioning, canary and rollback; set up logging/alerts; supported API gateway and auth integration.</li>
+                        <li>Partnered with FinOps to improve quota and billing observability and to recommend cost‑optimization changes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">May 2021 - Present (17 months)</div>
+                <div class="job-title">Founder & Lead Engineer</div>
+                <div class="company-name">MedCloud.PH | National Capital Reg, Philippines</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Health Care</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> Node.JS Express.js, EJS, SQLite3, PHP, Nginx, Flutter 3.0, Cloud API</div>
+                    <div class="detail-row"><span class="detail-label">Role:</span> Software Engineer/DevOps</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully built and deployed MedCloud.PH, a medical cloud platform utilizing Node.JS, Express, SQLite, PHP, Google Cloud API, and Azure API.</li>
+                        <li>Led the development and deployment of MedCloud's sub-business systems such as MedSAAS, MedX, Voicen and TeleMed.</li>
+                        <li>Implemented telemedicine and remote diagnosis features that improved the access of medical services to the remote areas of the Philippines.</li>
+                        <li>Improved the overall efficiency and digital transformation of the Philippine medical industry through the use of MedCloud.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Mar 2020 - May 2021 (14 months)</div>
+                <div class="job-title">Founder & CTO</div>
+                <div class="company-name">GoFreshBuy & FoodCloud | National Capital Reg, Philippines</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Retail / Merchandise</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> HTML5, Angular.JS, Ionic 5.0, PHP, Laravel, MySQL, Nginx, Python, PyTorch</div>
+                    <div class="detail-row"><span class="detail-label">Position:</span> Senior Manager</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Established a new model of fresh food distribution service system, utilizing a closed management of distributors, stores, and orders.</li>
+                        <li>Implemented a two-dimensional code tracking system for fresh products and stores, laying the foundation for the future fresh food supply chain IoT system.</li>
+                        <li>Built a machine learning system that quickly identifies users' tastes and automatically matches food purchase packages according to users' immediate needs.</li>
+                        <li>Reduced downtime and improved performance by automating the deployment process and implementing continuous monitoring of system health.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Jun 2019 - Present (1 year 6 months)</div>
+                <div class="job-title">Founder & Project Supervisor</div>
+                <div class="company-name">FacePay & FaceBanc | National Capital Reg, Philippines</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Banking / Financial Services</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> HTML5, React.js, jQuery, PHP, Laravel</div>
+                    <div class="detail-row"><span class="detail-label">Position:</span> Senior Manager</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Developed and implemented a solution that allows enterprises to access multiple payment platforms with just one click, supporting major payment platforms in Southeast Asia, the Middle East, Europe and North America.</li>
+                        <li>Developed and implemented a solution that allows individuals to make payments using just one QR code, regardless of the payment platform they use.</li>
+                        <li>Developed and implemented a one-stop currency exchange solution that facilitates foreign trade and payments for individuals and enterprises.</li>
+                        <li>Developed and implemented a cloud wallet solution that is compatible with multiple payment platforms, including location-based services.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Apr 2018 - Jun 2019 (1 year 3 months)</div>
+                <div class="job-title">Financial Data Project Manager</div>
+                <div class="company-name">Hefa Global | China</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Retail / Merchandise</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> Python, SQL, Tableau, AngularJS</div>
+                    <div class="detail-row"><span class="detail-label">Salary:</span> CNY 27,000</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully developed a platform for capital assets, distribution, and profit arrangement.</li>
+                        <li>Built an underlying assets general account-sub-account system and redesigned authority allocation system for more flexibility.</li>
+                        <li>Improved overall performance of e-commerce platform through data analysis and system implementation.</li>
+                        <li>Improved efficiency and scalability of platform through implementation of DevOps practices and use of Alibaba Cloud services.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Oct 2016 - Jan 2018 (1 year 7 months)</div>
+                <div class="job-title">Online Loan Project Supervisor</div>
+                <div class="company-name">Yizhen finance (Shanlin Group) | China</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Banking / Financial Services</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> Python, R, SQL, JSP, Java, Logistic regression, Random Forest, SVM</div>
+                    <div class="detail-row"><span class="detail-label">Salary:</span> CNY 32,000</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Made unique contributions to the industry through three major changes in the risk control of online lending. Reduced the bad debt rate of network loans from 20% to 7% through machine learning implementations.</li>
+                        <li>Built an integrated platform for repayment, lending, and collection, utilizing machine learning techniques and big data technologies to improve the scoring system and anti-fraud capabilities.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Oct 2014 - Sep 2016 (2 years)</div>
+                <div class="job-title">P2P Project Manager</div>
+                <div class="company-name">Yinpiao.com (China) Co., LTD | China</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Banking / Financial Services</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> HTML5, CSS3, JavaScript, AngularJS, Adobe XD, Sketch, InVision</div>
+                    <div class="detail-row"><span class="detail-label">Salary:</span> CNY 25,000</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully reconstructed the product system of the main website of yinpiao network and established cooperation with ministry of education, opening up a new mode of education and financial management.</li>
+                        <li>Built the combination of yinpiao network and traditional network media channels, developed interactive series of products for user engagement.</li>
+                        <li>Designed and developed a financial reconciliation system that realizes direct connection between banks and enterprises with real-time reconciliation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Dec 2012 - Jun 2014 (1 year 7 months)</div>
+                <div class="job-title">Java Project Director</div>
+                <div class="company-name">Trustone.com - Shanghai Jufu financial information | China</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Banking / Financial Services</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> HTML5, CSS3, JavaScript, Java, Spring Framework, Hibernate ORM, JSP</div>
+                    <div class="detail-row"><span class="detail-label">Salary:</span> CNY 21,000</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully developed a third-party large financial custody account jointly with China UnionPay commercial company, used for investors to directly invest more than 200,000 yuan online.</li>
+                        <li>Realized the separation of the custody account and financial management platform, making it the first large-amount fund custody account system in China.</li>
+                        <li>The program can be accessed through: http://www.trust-one.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-period">Jul 2008 - Dec 2012 (4 years 6 months)</div>
+                <div class="job-title">Front-End Software Engineer</div>
+                <div class="company-name">Shanghai Ennovation Culture & Communication Group | China</div>
+                <div class="job-details">
+                    <div class="detail-row"><span class="detail-label">Industry:</span> Computer / Information Technology (Software)</div>
+                    <div class="detail-row"><span class="detail-label">Tech Stack:</span> ActionScript 3.0, Flex, HTML5, CSS3, JavaScript</div>
+                    <div class="detail-row"><span class="detail-label">Salary:</span> CNY 16,000</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Key Achievements:</div>
+                    <ul class="achievement-list">
+                        <li>Successfully developed the software part of the Chongqing metro navigation machine and mobile advertising machine client systems, utilizing Flex and ActionScript for customized equipment front-end effects.</li>
+                        <li>Led the front-end development of the company's products in the field of transportation, utilizing the latest front-end technologies to create responsive and interactive user interfaces.</li>
+                        <li>Conducted extensive demand investigation and product construction to create user-friendly and visually appealing systems that meet end-user needs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-entry">
+                <div class="education-period">2021-2024</div>
+                <div class="education-degree">Bachelor's in Machine Learning and Artificial Intelligence</div>
+                <div class="education-school">GoldSmith, University Of London | UK (Online)</div>
+            </div>
+            <div class="education-entry">
+                <div class="education-period">2004-2008</div>
+                <div class="education-degree">Bachelor's Degree in Computer Science/Information Technology (In-completion)</div>
+                <div class="education-school">Nanjing University | China</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="skill-category">
+                        <h4>Advanced Frontend</h4>
+                        <ul class="skill-list">
+                            <li>HTML5 + CSS3 + JavaScript (Vanilla or ES6)</li>
+                            <li>Angular.js + TypeScript</li>
+                            <li>React + Redux + JSX</li>
+                            <li>Vue.js + Vuex</li>
+                            <li>Ionic 5.x + Angular + TypeScript</li>
+                            <li>Flutter 3.x + Dart</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <ul class="skill-list">
+                            <li>Node.JS + Express.js + MongoDB (MEAN / MERN Stack)</li>
+                            <li>PHP + Laravel + MySQL</li>
+                            <li>Python + Django + PostgreSQL</li>
+                            <li>Java + Spring Boot + MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="skill-category">
+                        <h4>Cloud and AI</h4>
+                        <ul class="skill-list">
+                            <li>Google Cloud Platform (GCP), TensorFlow, Google Firebase</li>
+                            <li>Azure, Azure Machine Learning</li>
+                            <li>AWS, SageMaker</li>
+                            <li>Python, Pandas, Numpy</li>
+                            <li>TensorFlow, PyTorch</li>
+                            <li>Jupyter Notebooks, SQL, PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps</h4>
+                        <ul class="skill-list">
+                            <li>Docker, Kubernetes</li>
+                            <li>Jenkins, Git</li>
+                            <li>Ansible, Puppet</li>
+                            <li>Terraform, AWS CloudFormation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Intermediate</h4>
+                        <ul class="skill-list">
+                            <li>Git, Docker, Machine Learning, IOT, SAAS, PAAS, LAAS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-column">
+                    <div class="project-category">
+                        <h4>AI/Multi-Agent Systems</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/agentforge">AgentForge</a></li>
+                            <li><a href="https://github.com/prospong/agentforest_platform">AgentForest Platform</a></li>
+                            <li><a href="https://github.com/prospong/agentforge-suite">AgentForge Suite</a></li>
+                            <li><a href="https://github.com/prospong/ai-persona-factory">AI Persona Factory</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-category">
+                        <h4>AI/ML Research</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/p-adic-ml">P-adic Machine Learning</a></li>
+                            <li><a href="https://github.com/prospong/esr-gnn">ESR-GNN (Graph Neural Networks)</a></li>
+                            <li><a href="https://github.com/prospong/SC-EF-Net">SC-EF-Net</a></li>
+                            <li><a href="https://github.com/prospong/Entropy-Steady-State-GNNs">Entropy Steady State GNNs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-column">
+                    <div class="project-category">
+                        <h4>Medical/Health Tech</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/doktok-5">DokTok-5 (Medical AI)</a></li>
+                            <li><a href="https://github.com/prospong/meddeep">MedDeep (Medical Deep Learning)</a></li>
+                            <li><a href="https://github.com/prospong/doktok-ai">DokTok AI Platform</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-category">
+                        <h4>Job/Career Tech</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/JobAI">JobAI</a></li>
+                            <li><a href="https://github.com/prospong/edumatch">EduMatch</a></li>
+                            <li><a href="https://github.com/prospong/findjob">FindJob</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-category">
+                        <h4>Business/Finance Tech</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/FacePay-riskprediction">FacePay Risk Prediction</a></li>
+                            <li><a href="https://github.com/prospong/proppit-auto-publisher">PropPit Auto Publisher</a></li>
+                            <li><a href="https://github.com/prospong/saletok-2">SaleTok-2</a></li>
+                            <li><a href="https://github.com/prospong/propai">PropAI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-column">
+                    <div class="project-category">
+                        <h4>Food/Lifestyle Tech</h4>
+                        <ul class="project-list">
+                            <li><a href="https://github.com/prospong/foodmate">FoodMate</a></li>
+                            <li><a href="https://github.com/prospong/realreel">RealReel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-section">
+                <div class="proficiency-note">Proficiency level: 0 - Poor, 10 - Excellent</div>
+                <table class="languages-table">
+                    <thead>
+                        <tr>
+                            <th>Language</th>
+                            <th>Spoken</th>
+                            <th>Written</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: left;">Mandarin (Primary)</td>
+                            <td>10</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">English</td>
+                            <td>7</td>
+                            <td>8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Awards & Achievements</h2>
+            <div class="awards-section">
+                <div class="award-item">
+                    <div class="award-title">Patent Application Type/No: Invention 1/2023/050166</div>
+                    <div class="award-details">
+                        <strong>Applicant:</strong> TIAN, Zhigang (CN)<br>
+                        <strong>Title:</strong> GPT-based Automated Medical Care System<br>
+                        <strong>Patent Examiner:</strong> Jerson P. Turga
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Software Copyrights</div>
+                    <div class="award-details">
+                        <ul class="copyright-list" style="list-style: none; margin: 0; padding: 0;">
+                            <li>2023-01514-N COMPREHENSIVE MEDICAL API SUITE</li>
+                            <li>2023-01515-N MEDCITY DIGITAL HOSPITAL INFRASTRUCTURE PLATFORM</li>
+                            <li>2023-01516-N MEDCLOUD.PH MEDICAL CLOUD PORTAL AND SUBSYSTEMS</li>
+                            <li>2023-01517-N MEDGPT AI DOCTOR (AUTOMATED MEDICAL ASSISTANCE SYSTEM)</li>
+                            <li>2023-01518-N MEDGPT AI DOCTOR (AUTOMATED MEDICAL ASSISTANCE SYSTEM)</li>
+                            <li>2023-01519-N MEDGPT AI DOCTOR (PHYSICIAN'S AI-ENHANCED NOTES AND DOCUMENTATION SYSTEM)</li>
+                            <li>2023-01520-N MEDGPT AI DOCTOR (ADVANCED AI MODELS)</li>
+                            <li>2023-01521-N MEDGPT AI DOCTOR (PATIENT APP, FLUTTER VERSION)</li>
+                            <li>2023-01522-N AI-DRIVEN MEDPHARM PHARMACY MANAGEMENT SYSTEM</li>
+                            <li>2023-01523-N MEDV VIDEO CONSULTATION PATIENT APP (FLUTTER), DOCTOR APP (FLUTTER) AND ADMIN SYSTEM (REACT)</li>
+                            <li>2023-01524-N VOICEN AI-POWERED MEDICAL TRANSCRIPTION PLATFORM</li>
+                            <li>2023-01525-N INTELLIGENT IMAGE DIAGNOSTIC ASSISTANT SYSTEM (IIDAS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <div class="info-table">
+                <div class="info-row">
+                    <div class="info-cell">
+                        <span class="info-label">Expected Salary</span>
+                        <span class="salary-highlight">USD 60,000 Annual</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-label">Preferred Location</span>
+                        Philippines
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-label">Gender</span>
+                        Male
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-label">Age</span>
+                        39 years
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-label">Marital Status</span>
+                        Married
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
