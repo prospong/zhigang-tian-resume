@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Zhigang Tian - Academic Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            padding: 0;
+            font-size: 11pt;
+        }
+        
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 2.5cm 2cm 2cm 2cm;
+            position: relative;
+        }
+        
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2pt solid #000;
+            padding-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .title {
+            font-size: 16pt;
+            font-weight: normal;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        .contact-info div {
+            margin-bottom: 3px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1pt solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .subsection {
+            margin-bottom: 15px;
+        }
+        
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        
+        .entry {
+            margin-bottom: 15px;
+            padding-left: 0px;
+        }
+        
+        .entry-header {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .entry-details {
+            font-size: 10pt;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .entry-description {
+            font-size: 10pt;
+            line-height: 1.4;
+            text-align: justify;
+            margin-top: 5px;
+        }
+        
+        .publication-entry {
+            margin-bottom: 12px;
+            font-size: 10pt;
+            line-height: 1.4;
+            text-align: justify;
+        }
+        
+        .publication-entry .authors {
+            font-weight: bold;
+        }
+        
+        .publication-entry .title {
+            font-style: italic;
+        }
+        
+        .publication-entry .journal {
+            font-weight: bold;
+        }
+        
+        .research-interests {
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        .research-interests ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .research-interests li {
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        .skill-column {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 15px;
+            width: 50%;
+        }
+        
+        .skill-column:last-child {
+            padding-right: 0;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #000;
+            border-bottom: 1pt solid #000;
+            padding-bottom: 2px;
+        }
+        
+        .skill-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+        
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .education-entry {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1pt solid #000;
+            background: #f9f9f9;
+        }
+        
+        .education-year {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .education-degree {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 3px 0;
+        }
+        
+        .education-school {
+            font-size: 10pt;
+            color: #333;
+        }
+        
+        .education-thesis {
+            font-size: 9pt;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .conference-entry {
+            margin-bottom: 10px;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        .conference-title {
+            font-weight: bold;
+        }
+        
+        .conference-details {
+            font-style: italic;
+            color: #333;
+        }
+        
+        .award-entry {
+            margin-bottom: 12px;
+            padding: 8px;
+            border: 1pt solid #000;
+            background: #f9f9f9;
+        }
+        
+        .award-title {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .award-details {
+            font-size: 9pt;
+            color: #333;
+        }
+        
+        .teaching-entry {
+            margin-bottom: 12px;
+        }
+        
+        .course-title {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        
+        .course-details {
+            font-size: 10pt;
+            color: #333;
+        }
+        
+        .course-description {
+            font-size: 10pt;
+            margin-top: 3px;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                min-height: auto;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header-section">
+            <div class="name">Zhigang Tian (Hanson Tins)</div>
+            <div class="title">Researcher in Artificial Intelligence and Machine Learning</div>
+            <div class="contact-info">
+                <div>Email: tzg@facepayonline.com | Phone: +63 09154101370</div>
+                <div>Address: Makati, Metro Manila, Philippines</div>
+                <div>LinkedIn: https://www.linkedin.com/in/h5678762a6810a768/</div>
+                <div>GitHub: https://github.com/prospong</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="research-interests">
+                <p>My research focuses on the intersection of artificial intelligence, machine learning, and their practical applications in healthcare, finance, and multi-agent systems. I am particularly interested in:</p>
+                <ul>
+                    <li><strong>Medical AI and Healthcare Technology:</strong> Development of AI-powered diagnostic tools, medical decision support systems, and telemedicine platforms</li>
+                    <li><strong>Multi-Agent Systems:</strong> Design and implementation of distributed AI systems with shared context protocols for complex problem-solving</li>
+                    <li><strong>Natural Language Processing:</strong> Large language models, medical language processing, and conversational AI systems</li>
+                    <li><strong>Machine Learning Applications:</strong> Risk assessment models, predictive analytics, and automated decision-making systems</li>
+                    <li><strong>Cloud Computing and AI Infrastructure:</strong> Scalable AI deployment, containerization, and distributed computing architectures</li>
+                    <li><strong>Graph Neural Networks:</strong> Advanced graph-based learning algorithms for complex relationship modeling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-entry">
+                <div class="education-year">2021-2024</div>
+                <div class="education-degree">Bachelor of Science in Machine Learning and Artificial Intelligence</div>
+                <div class="education-school">Goldsmiths, University of London, UK (Online)</div>
+                <div class="education-thesis">Thesis Focus: Advanced AI Applications in Healthcare Systems</div>
+            </div>
+            <div class="education-entry">
+                <div class="education-year">2004-2008</div>
+                <div class="education-degree">Bachelor of Science in Computer Science/Information Technology (Incomplete)</div>
+                <div class="education-school">Nanjing University, China</div>
+                <div class="education-thesis">Focus: Software Engineering and System Architecture</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Research Experience</h2>
+            
+            <div class="entry">
+                <div class="entry-header">Principal Research Engineer | AgentForest.one (2024 - Present)</div>
+                <div class="entry-details">Multi-agent Systems Research | Remote</div>
+                <div class="entry-description">
+                    Leading research and development of a multi-agent SaaS platform utilizing Model Context Protocol (MCP) for orchestrating domain-specific agents. Research focuses on agent communication protocols, shared context mechanisms, and scalable AI system architectures. Developed novel approaches to agent orchestration and implemented advanced RAG (Retrieval-Augmented Generation) pipelines for enhanced AI reasoning capabilities.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Lead AI Researcher | MedGPT Research Lab (2023 - Present)</div>
+                <div class="entry-details">Medical AI Research | National Capital Region, Philippines</div>
+                <div class="entry-description">
+                    Conducting applied research in medical artificial intelligence, focusing on the development of AI-powered diagnostic tools and medical decision support systems. Research includes fine-tuning large language models for medical applications, integration of multiple AI frameworks (Hugging Face, OpenAI APIs, Med-PaLM), and development of conversational AI for healthcare applications. Leading cross-disciplinary research collaborations with medical professionals.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Senior Research Associate | Healthcare AI Initiative (2021 - Present)</div>
+                <div class="entry-details">Applied AI Research | MedCloud.PH, Philippines</div>
+                <div class="entry-description">
+                    Research focus on cloud-based medical AI systems and telemedicine platforms. Developed novel approaches to medical data processing, remote diagnosis systems, and AI-powered healthcare delivery models. Research contributed to improving healthcare accessibility in remote areas through technology innovation.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Research Engineer | Multi-Cloud Systems (2021 - 2022)</div>
+                <div class="entry-details">Cloud Computing Research | Accenture, Philippines</div>
+                <div class="entry-description">
+                    Conducted research in multi-cloud infrastructure optimization, focusing on Infrastructure as Code (IaC) standardization and container orchestration across cloud platforms. Research involved cost optimization algorithms, automated deployment strategies, and observability framework development.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Publications and Patents</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">Patent Applications</div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> (2023). 
+                    <span class="title">"GPT-based Automated Medical Care System."</span> 
+                    Patent Application No. 1/2023/050166. Patent Examiner: Jerson P. Turga. Status: Under Review.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Software Copyrights and Technical Contributions</div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> (2023). 
+                    <span class="title">"MEDGPT AI DOCTOR: Advanced AI Models for Medical Assistance."</span> 
+                    Software Copyright Registration No. 2023-01520-N.
+                </div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> (2023). 
+                    <span class="title">"VOICEN: AI-Powered Medical Transcription Platform."</span> 
+                    Software Copyright Registration No. 2023-01524-N.
+                </div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> (2023). 
+                    <span class="title">"Intelligent Image Diagnostic Assistant System (IIDAS)."</span> 
+                    Software Copyright Registration No. 2023-01525-N.
+                </div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> (2023). 
+                    <span class="title">"Comprehensive Medical API Suite for Healthcare Integration."</span> 
+                    Software Copyright Registration No. 2023-01514-N.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Open Source Research Contributions</div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> 
+                    <span class="title">"P-adic Machine Learning: Novel Approaches to Non-Archimedean Analysis in AI."</span> 
+                    Available at: https://github.com/prospong/p-adic-ml
+                </div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> 
+                    <span class="title">"ESR-GNN: Enhanced Spectral Residual Graph Neural Networks."</span> 
+                    Available at: https://github.com/prospong/esr-gnn
+                </div>
+                <div class="publication-entry">
+                    <span class="authors">Tian, Z.</span> 
+                    <span class="title">"Entropy Steady-State Graph Neural Networks for Dynamic Systems."</span> 
+                    Available at: https://github.com/prospong/Entropy-Steady-State-GNNs
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Teaching and Mentoring</h2>
+            
+            <div class="teaching-entry">
+                <div class="course-title">Machine Learning Applications in Healthcare (2023-Present)</div>
+                <div class="course-details">Guest Lecturer | Various Industry Workshops | Philippines</div>
+                <div class="course-description">Delivered specialized workshops on practical applications of machine learning in healthcare settings, focusing on AI model deployment, medical data processing, and ethical considerations in healthcare AI.</div>
+            </div>
+
+            <div class="teaching-entry">
+                <div class="course-title">Cloud Computing and AI Infrastructure (2021-2022)</div>
+                <div class="course-details">Technical Mentor | Accenture Training Programs | Philippines</div>
+                <div class="course-description">Mentored junior engineers in multi-cloud deployment strategies, containerization technologies, and DevOps practices for AI/ML workloads.</div>
+            </div>
+
+            <div class="teaching-entry">
+                <div class="course-title">Software Development Mentorship (2015-2020)</div>
+                <div class="course-details">Team Leadership | Various Organizations | China & Philippines</div>
+                <div class="course-description">Provided technical mentorship to development teams, focusing on software architecture, machine learning integration, and system optimization techniques.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Conference Presentations and Professional Activities</h2>
+            
+            <div class="conference-entry">
+                <span class="conference-title">AI in Healthcare: Practical Implementation Strategies</span><br>
+                <span class="conference-details">Healthcare Technology Summit, Manila, Philippines (2023)</span>
+            </div>
+
+            <div class="conference-entry">
+                <span class="conference-title">Multi-Agent Systems for Complex Problem Solving</span><br>
+                <span class="conference-details">International Conference on Artificial Intelligence Applications (2024)</span>
+            </div>
+
+            <div class="conference-entry">
+                <span class="conference-title">Cloud-Native AI: Deployment and Scaling Strategies</span><br>
+                <span class="conference-details">DevOps and Cloud Computing Conference, Philippines (2022)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills and Research Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-column">
+                    <div class="skill-category">
+                        <h4>AI/ML Frameworks and Tools</h4>
+                        <ul class="skill-list">
+                            <li>TensorFlow, PyTorch, Hugging Face</li>
+                            <li>OpenAI APIs, Med-PaLM, LLaMA</li>
+                            <li>Jupyter Notebooks, Pandas, NumPy</li>
+                            <li>Scikit-learn, MLflow, Weights & Biases</li>
+                            <li>Natural Language Processing (NLP)</li>
+                            <li>Computer Vision and Medical Imaging</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming and Development</h4>
+                        <ul class="skill-list">
+                            <li>Python, JavaScript, Java, R</li>
+                            <li>Node.js, Express.js, Flask, Django</li>
+                            <li>React, Angular, Vue.js</li>
+                            <li>SQL, PostgreSQL, MongoDB</li>
+                            <li>Git, GitHub, Version Control</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-column">
+                    <div class="skill-category">
+                        <h4>Cloud Computing and Infrastructure</h4>
+                        <ul class="skill-list">
+                            <li>AWS, Google Cloud Platform (GCP), Azure</li>
+                            <li>Docker, Kubernetes, Container Orchestration</li>
+                            <li>Terraform, Infrastructure as Code (IaC)</li>
+                            <li>CI/CD Pipelines, Jenkins, GitHub Actions</li>
+                            <li>Microservices Architecture</li>
+                            <li>API Gateway, Load Balancing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Analysis and Visualization</h4>
+                        <ul class="skill-list">
+                            <li>Statistical Analysis, Hypothesis Testing</li>
+                            <li>Data Mining, Feature Engineering</li>
+                            <li>Tableau, Power BI, D3.js</li>
+                            <li>Time Series Analysis, Forecasting</li>
+                            <li>A/B Testing, Experimental Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Research Funding and Grants</h2>
+            
+            <div class="entry">
+                <div class="entry-header">Self-Funded Research Initiative: Multi-Agent Medical AI Systems</div>
+                <div class="entry-details">Principal Investigator | 2023-2024 | $50,000 USD</div>
+                <div class="entry-description">
+                    Independent research funding for the development of AI-powered medical diagnostic tools and telemedicine platforms, resulting in multiple patent applications and software copyrights.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Industry Collaboration Grant: Healthcare Digital Transformation</div>
+                <div class="entry-details">Co-Principal Investigator | 2021-2023 | $75,000 USD</div>
+                <div class="entry-description">
+                    Collaborative research funding with healthcare institutions in the Philippines for the development of cloud-based medical platforms and AI-driven diagnostic systems.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Service and Academic Activities</h2>
+            
+            <div class="entry">
+                <div class="entry-header">Peer Review Activities</div>
+                <div class="entry-description">
+                    Ad-hoc reviewer for various technical conferences and industry publications in AI, healthcare technology, and cloud computing domains.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Professional Memberships</div>
+                <div class="entry-description">
+                    Active member of international AI and machine learning communities, contributing to open-source projects and collaborative research initiatives.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">Industry Consultation</div>
+                <div class="entry-description">
+                    Provided technical consultation to various organizations on AI implementation strategies, healthcare technology adoption, and cloud infrastructure optimization.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Awards and Recognition</h2>
+            
+            <div class="award-entry">
+                <div class="award-title">Innovation Excellence in Healthcare AI (2023)</div>
+                <div class="award-details">Recognition for groundbreaking work in medical AI applications and patent contribution to automated medical care systems.</div>
+            </div>
+
+            <div class="award-entry">
+                <div class="award-title">Technical Leadership in Cloud Computing (2022)</div>
+                <div class="award-details">Accenture Excellence Award for outstanding contributions to multi-cloud infrastructure standardization and cost optimization.</div>
+            </div>
+
+            <div class="award-entry">
+                <div class="award-title">Outstanding Contribution to Medical Technology (2021)</div>
+                <div class="award-details">Recognition for developing telemedicine solutions that improved healthcare access in remote areas of the Philippines.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="entry">
+                <div class="entry-description">
+                    <strong>Mandarin Chinese:</strong> Native proficiency (Speaking: 10/10, Writing: 10/10)<br>
+                    <strong>English:</strong> Advanced proficiency (Speaking: 7/10, Writing: 8/10)<br>
+                    <em>Proficiency scale: 0 (Poor) - 10 (Excellent)</em>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">References</h2>
+            <div class="entry">
+                <div class="entry-description">
+                    Available upon request. References include academic collaborators, industry partners, and healthcare professionals who have worked with my research initiatives.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
