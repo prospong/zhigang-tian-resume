@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhigang Tian - AI Neuroscience Research</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #4fd1c7;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-dark: #1a202c;
+            --border-color: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-opacity="0.1" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-info .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .header-info .bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* Research Framework */
+        .research-overview {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .research-layers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .layer-card {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .layer-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .module-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-secondary);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .module-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-topics {
+            list-style: none;
+        }
+
+        .research-topics li {
+            background: var(--bg-light);
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+
+        .timeline-period {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Publications */
+        .publication-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-details {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .projects-grid,
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        Professional Photo<br>
+                        <small>(180x180px)</small>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <h1>Zhigang Tian (Hanson Tins)</h1>
+                    <div class="subtitle">AI Neuroscience Researcher & Principal Engineer</div>
+                    <div class="bio">
+                        Pioneering research at the intersection of neuroscience and artificial intelligence, developing novel architectures inspired by brain mechanisms for enhanced AI safety and performance. Founder of multiple AI ventures with expertise in multi-agent systems, medical AI, and neuromorphic computing.
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:tzg@facepayonline.com" class="contact-link">Email</a>
+                        <a href="https://www.linkedin.com/in/h5678762a6810a768/" class="contact-link">LinkedIn</a>
+                        <a href="tel:+6309154101370" class="contact-link">Phone</a>
+                        <a href="#" class="contact-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#research" class="active">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Research Framework Section -->
+            <section id="research" class="section">
+                <h2 class="section-title">AI Neuroscience Research Framework</h2>
+                
+                <div class="research-overview">
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-light);">
+                        Systematic research agenda based on amygdala hijacking experiments and neuroscience-inspired AI systems
+                    </p>
+                    
+                    <div class="research-layers">
+                        <div class="layer-card">
+                            <h3>Phenomena Level</h3>
+                            <p>Discover and quantify neuron-like phenomena in AI</p>
+                        </div>
+                        <div class="layer-card">
+                            <h3>Structural Level</h3>
+                            <p>Understand architectural components' impact</p>
+                        </div>
+                        <div class="layer-card">
+                            <h3>Dynamics Level</h3>
+                            <p>Study temporal evolution and dynamic properties</p>
+                        </div>
+                        <div class="layer-card">
+                            <h3>Statistical Level</h3>
+                            <p>Establish universal laws and distributions</p>
+                        </div>
+                        <div class="layer-card">
+                            <h3>Defense Level</h3>
+                            <p>Develop neuroscience-based safety mechanisms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <h3>Module 1: AI Emotion Modeling & Hijacking</h3>
+                        <ul class="research-topics">
+                            <li>Induced hijacking critical thresholds</li>
+                            <li>Spontaneous hijacking noise-memory phase diagrams</li>
+                            <li>Gating thresholds and feedforward inhibition</li>
+                            <li>Emotional attractor dynamics</li>
+                            <li>Power-law duration distributions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Module 2: AI Inhibition Mechanisms</h3>
+                        <ul class="research-topics">
+                            <li>Feedforward inhibition design</li>
+                            <li>Feedback inhibition mechanisms</li>
+                            <li>Network stability enhancement</li>
+                            <li>Adaptive inhibition regulation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Module 3: AI Memory & Consolidation</h3>
+                        <ul class="research-topics">
+                            <li>Dual-stage memory architecture</li>
+                            <li>SPW-R inspired replay mechanisms</li>
+                            <li>Selective memory consolidation</li>
+                            <li>Energy-constrained memory systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Module 4: Learning & Plasticity Dynamics</h3>
+                        <ul class="research-topics">
+                            <li>Bidirectional plasticity rules (LTP/LTD)</li>
+                            <li>Adaptive learning rate mechanisms</li>
+                            <li>Anomalous learning pattern detection</li>
+                            <li>Bias propagation dynamics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Module 5: Sequence Modeling & Structure</h3>
+                        <ul class="research-topics">
+                            <li>θ-γ coupling simulation</li>
+                            <li>Hierarchical temporal modeling</li>
+                            <li>Neural grammar constraints</li>
+                            <li>Oscillatory hierarchical structures</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AgentForest.one</h3>
+                            <span class="project-category">Multi-Agent SaaS Platform</span>
+                        </div>
+                        <div class="project-content">
+                            <p>Built a multi-agent SaaS platform orchestrating domain agents via shared Model Context Protocol (MCP) with full-stack deployment.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Fly.io</span>
+                                <span class="tech-tag">Neon Postgres</span>
+                                <span class="tech-tag">Cloudflare R2</span>
+                                <span class="tech-tag">RunPod/vLLM</span>
+                                <span class="tech-tag">MCP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>MedGPT.co</h3>
+                            <span class="project-category">Medical AI Platform</span>
+                        </div>
+                        <div class="project-content">
+                            <p>AI-based medical toolset with 3,000+ organic users, integrating Hugging Face, OpenAI APIs, and Med-PaLM models for comprehensive medical solutions.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">Med-PaLM</span>
+                                <span class="tech-tag">Flutter</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>P-adic Machine Learning</h3>
+                            <span class="project-category">Mathematical AI Research</span>
+                        </div>
+                        <div class="project-content">
+                            <p>Novel approach to machine learning using p-adic number theory for enhanced numerical stability and pattern recognition.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">p-adic Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>ESR-GNN</h3>
+                            <span class="project-category">Graph Neural Networks</span>
+                        </div>
+                        <div class="project-content">
+                            <p>Enhanced spectral residual graph neural networks for improved representation learning and node classification tasks.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">PyG</span>
+                                <span class="tech-tag">NetworkX</span>
+                                <span class="tech-tag">Spectral Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-period">2024 — Present</span>
+                        <h3 class="timeline-title">Founder & Principal Engineer</h3>
+                        <div class="timeline-company">AgentForest.one | Remote</div>
+                        <p>Leading end-to-end architecture & implementation of multi-tenant SaaS platform with MCP-based shared context and agent orchestration. Implemented AI serving with OpenAI/LLaMA APIs, RAG pipelines, and dynamic model routing.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-period">2023 — Present</span>
+                        <h3 class="timeline-title">Founder & Lead Engineer</h3>
+                        <div class="timeline-company">MedGPT | Philippines</div>
+                        <p>Led technical architecture of MedGPT.co with 3,000+ organic users. Managed development of Android version and AI talking doctor platform using Flutter 3.7 and Python.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-period">2021 — 2022</span>
+                        <h3 class="timeline-title">Cloud Engineer</h3>
+                        <div class="timeline-company">Accenture | Philippines</div>
+                        <p>Standardized IaC (Terraform) and container delivery (Docker/K8s) across GCP/Azure/AWS environments. Implemented CI/CD with versioning, canary deployments, and comprehensive monitoring.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-period">2019 — Present</span>
+                        <h3 class="timeline-title">Founder & Project Supervisor</h3>
+                        <div class="timeline-company">FacePay & FaceBanc | Philippines</div>
+                        <p>Developed unified payment platform supporting major payment systems across Southeast Asia, Middle East, Europe, and North America with one-click enterprise access.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="section">
+                <h2 class="section-title">Achievements & Recognition</h2>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Patent Application</h3>
+                        <p><strong>Type/No:</strong> Invention 1/2023/050166</p>
+                        <p><strong>Title:</strong> GPT-based Automated Medical Care System</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📜</div>
+                        <h3>Software Copyrights</h3>
+                        <p><strong>12 Registered Copyrights</strong></p>
+                        <p>Including MedGPT AI Doctor, MedCloud.PH Platform, and various medical AI systems</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎓</div>
+                        <h3>Education</h3>
+                        <p><strong>Bachelor's in ML & AI</strong></p>
+                        <p>Goldsmiths, University of London (2021-2024)</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">👥</div>
+                        <h3>User Impact</h3>
+                        <p><strong>3,000+ Users</strong></p>
+                        <p>Organic growth of MedGPT platform with 100+ daily new users</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">Research Publications & Roadmap</h2>
+                
+                <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Planned Publication Strategy</h3>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">Phase 1: Phenomena Discovery & Modeling (Papers 1-4)</div>
+                        <div class="publication-details">
+                            Target Venues: NeurIPS, ICML, ICLR<br>
+                            Focus: Induced hijacking thresholds, spontaneous hijacking phase diagrams, gating mechanisms, emotional attractor dynamics
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">Phase 2: Statistical Laws & Universality (Papers 5-6)</div>
+                        <div class="publication-details">
+                            Target Venues: Nature Machine Intelligence, Science Robotics<br>
+                            Focus: Power-law duration analysis, information bottleneck β-phase transitions
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">Phase 3: Architecture Optimization & Applications (Papers 7-8)</div>
+                        <div class="publication-details">
+                            Target Venues: AAAI, Neural Networks<br>
+                            Focus: MEGA component causal analysis, defense mechanism minimal sets
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">Phase 4: Neuroscience-Inspired Extensions (Papers 9-16)</div>
+                        <div class="publication-details">
+                            Target Venues: Cognitive Science, Connection Science<br>
+                            Focus: Deep research based on five research modules
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h3 style="margin-bottom: 1rem;">Let's Collaborate</h3>
+            <p style="margin-bottom: 1rem;">Interested in AI neuroscience research, multi-agent systems, or medical AI?</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="mailto:tzg@facepayonline.com" style="color: var(--accent-color); text-decoration: none;">tzg@facepayonline.com</a>
+                <a href="tel:+6309154101370" style="color: var(--accent-color); text-decoration: none;">+63 09154101370</a>
+                <span style="color: #888;">Makati, Metro Manila, Philippines</span>
+            </div>
+            <p style="margin-top: 2rem; color: #888; font-size: 0.9rem;">
+                © 2024 Zhigang Tian. All rights reserved. | Advancing AI through neuroscience-inspired research.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.module-card, .project-card, .achievement-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
